@@ -1034,7 +1034,7 @@ button {
    BUYERS PAGE STYLES
    ========================================= */
 .page-header {
-  background: linear-gradient(to right, rgba(24cf, 250, 248, 0.9), rgba(24cf, 250, 248, 0.9)),
+  background: linear-gradient(to right, rgba(252, 250, 248, 0.9), rgba(252, 250, 248, 0.9)),
               url('https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&q=80') center/cover;
   padding: calc(var(--nav-height) + 4rem) 2rem 4rem;
   text-align: center;

@@ -138,7 +138,7 @@ let currentUser = null; // null = guest, object = logged in seller
 // Navbar Scroll Effect
 window.addEventListener('scroll', () => {
   const navbar = document.getElementById('navbar');
-  if (navbar) {
+  if (navbar && !document.body.classList.contains('buyers-page') && !document.body.classList.contains('sellers-page')) {
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
     } else {
