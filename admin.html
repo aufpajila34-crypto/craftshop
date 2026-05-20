@@ -11,6 +11,29 @@
 </head>
 <body class="admin-body">
 
+  <!-- Admin Login Overlay -->
+  <div id="adminLoginOverlay" class="admin-login-overlay">
+    <div class="admin-login-card">
+      <div class="admin-logo" style="justify-content: center; margin-bottom: 2rem; color: var(--text-dark); border-bottom: none; padding: 0;">
+        <span class="logo-icon">🪡</span>
+        <span>Craft<strong>Admin</strong></span>
+      </div>
+      <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-dark);">Admin Login</h2>
+      <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem;">Admin ID</label>
+          <input type="text" id="adminId" class="admin-input" style="width: 100%; box-sizing: border-box;" placeholder="Enter admin ID" required>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem;">Password</label>
+          <input type="password" id="adminPassword" class="admin-input" style="width: 100%; box-sizing: border-box;" placeholder="Enter password" required>
+        </div>
+        <div id="loginError" style="color: var(--error); margin-bottom: 1rem; font-size: 0.9rem; display: none; text-align: center;">Invalid Admin ID or Password</div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.8rem;">Secure Login</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Admin Sidebar -->
   <aside class="admin-sidebar">
     <div class="admin-logo">

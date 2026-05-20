@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   renderPendingSellers();
   renderAllSellers();
   renderAdminProducts();
+  
+  // Check if already logged in (mock session)
+  if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+    document.getElementById('adminLoginOverlay').classList.add('hidden');
+  }
 });
 
 // Tab Switching Logic
@@ -106,4 +111,29 @@ function renderAdminProducts() {
       </td>
     </tr>
   `).join('');
+}
+
+// Admin Login Logic
+function handleAdminLogin(e) {
+  e.preventDefault();
+  const id = document.getElementById('adminId').value;
+  const pwd = document.getElementById('adminPassword').value;
+  const errorDiv = document.getElementById('loginError');
+  
+  // Mock Credentials: ID = admin, Password = admin123
+  if (id === 'admin' && pwd === 'admin123') {
+    errorDiv.style.display = 'none';
+    sessionStorage.setItem('adminLoggedIn', 'true');
+    document.getElementById('adminLoginOverlay').classList.add('hidden');
+    
+    // Add logout action dynamically to the back button
+    const logoutBtn = document.querySelector('.admin-logout a');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem('adminLoggedIn');
+      });
+    }
+  } else {
+    errorDiv.style.display = 'block';
+  }
 }
