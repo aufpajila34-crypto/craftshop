@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body class="home-page">
 
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
@@ -37,18 +37,18 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <section class="hero" id="home">
-    <div class="hero-bg-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
+  <section class="hero video-hero" id="home">
+    <video autoplay loop muted playsinline class="hero-bg-video">
+      <!-- You can replace this src with your own MP4 link later -->
+      <source src="https://cdn.pixabay.com/video/2020/05/26/40242-424843075_tiny.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    
     <div class="hero-content">
       <div class="hero-badge">🎨 Handmade with Love</div>
       <h1 class="hero-title">
         Find <span class="highlight">Unique Crafts</span><br/>
-        & <span class="highlight">Custom Frames</span><br/>
-        All in One Place
+        & Custom Frames
       </h1>
       <p class="hero-desc">
         Connect with talented craft makers and frame artists. Discover one-of-a-kind handmade pieces, support local artisans, and find the perfect work of art for your space.
@@ -57,7 +57,7 @@
         <a href="buyers.html" class="btn btn-primary btn-lg" id="hero-browse-btn">
           <span>🛍️</span> Explore Crafts
         </a>
-        <a href="sellers.html" class="btn btn-glass btn-lg" id="hero-sell-btn">
+        <a href="sellers.html" class="btn btn-white btn-lg" id="hero-sell-btn">
           <span>✨</span> Become a Seller
         </a>
       </div>
@@ -76,18 +76,6 @@
           <span class="stat-number" data-target="12000">0</span><span class="stat-suffix">+</span>
           <span class="stat-label">Happy Buyers</span>
         </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-image-card main-card">
-        <img src="C:\Users\DELL\.gemini\antigravity\brain\1cb26cf3-2e77-4fc3-a23b-92411ca76c14\craft_hero_banner_1779303435265.png" alt="Handmade crafts and frames collection" loading="lazy"/>
-        <div class="card-badge">✅ Handcrafted</div>
-      </div>
-      <div class="hero-image-card side-card-1">
-        <img src="C:\Users\DELL\.gemini\antigravity\brain\1cb26cf3-2e77-4fc3-a23b-92411ca76c14\frames_collection_1779303453765.png" alt="Artisan frames" loading="lazy"/>
-      </div>
-      <div class="hero-image-card side-card-2">
-        <img src="C:\Users\DELL\.gemini\antigravity\brain\1cb26cf3-2e77-4fc3-a23b-92411ca76c14\pottery_craft_1779303545406.png" alt="Pottery crafts" loading="lazy"/>
       </div>
     </div>
   </section>
