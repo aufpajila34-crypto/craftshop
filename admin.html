@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard – CraftNest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="admin.css"/>
+</head>
+<body class="admin-body">
+
+  <!-- Admin Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-logo">
+      <span class="logo-icon">🪡</span>
+      <span>Craft<strong>Admin</strong></span>
+    </div>
+    
+    <nav class="admin-nav">
+      <a href="#" class="admin-nav-item active" onclick="switchAdminTab('overview', this)">
+        <span>📊</span> Overview
+      </a>
+      <a href="#" class="admin-nav-item" onclick="switchAdminTab('sellers', this)">
+        <span>🏪</span> Manage Sellers
+      </a>
+      <a href="#" class="admin-nav-item" onclick="switchAdminTab('products', this)">
+        <span>🛍️</span> All Products
+      </a>
+      <a href="#" class="admin-nav-item" onclick="switchAdminTab('orders', this)">
+        <span>📦</span> Orders
+      </a>
+      <a href="#" class="admin-nav-item" onclick="switchAdminTab('users', this)">
+        <span>👥</span> Customers
+      </a>
+    </nav>
+    
+    <div class="admin-logout">
+      <a href="index.html" class="admin-nav-item">
+        <span>🚪</span> Back to Website
+      </a>
+    </div>
+  </aside>
+
+  <!-- Admin Main Content -->
+  <main class="admin-main">
+    
+    <!-- Admin Header -->
+    <header class="admin-header">
+      <div class="header-search">
+        <span>🔍</span>
+        <input type="text" placeholder="Search across the platform..."/>
+      </div>
+      <div class="header-profile">
+        <span class="notification-icon">🔔<span class="badge">3</span></span>
+        <div class="profile-info">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Admin"/>
+          <span>Super Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      
+      <!-- TAB: OVERVIEW -->
+      <section id="tab-overview" class="admin-section active">
+        <h2 class="section-title">Platform Overview</h2>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#e8f0fe; color:#1a73e8">💰</div>
+            <div class="stat-details">
+              <h3>₹2,45,000</h3>
+              <p>Total Revenue</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#e6f4ea; color:#1e8e3e">🏪</div>
+            <div class="stat-details">
+              <h3>124</h3>
+              <p>Active Sellers</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fef7e0; color:#f29900">🛍️</div>
+            <div class="stat-details">
+              <h3>845</h3>
+              <p>Live Products</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background:#fce8e6; color:#d93025">📦</div>
+            <div class="stat-details">
+              <h3>1,204</h3>
+              <p>Total Orders</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-row">
+          <div class="card recent-applications">
+            <div class="card-header">
+              <h3>Pending Seller Approvals</h3>
+              <button class="btn-link">View All</button>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Shop Name</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="pendingSellersTable">
+                  <!-- Injected by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card recent-orders">
+            <div class="card-header">
+              <h3>Recent Transactions</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>#ORD-8901</td><td>₹1,200</td><td><span class="status-badge success">Completed</span></td></tr>
+                  <tr><td>#ORD-8902</td><td>₹4,500</td><td><span class="status-badge warning">Pending</span></td></tr>
+                  <tr><td>#ORD-8903</td><td>₹850</td><td><span class="status-badge success">Completed</span></td></tr>
+                  <tr><td>#ORD-8904</td><td>₹2,100</td><td><span class="status-badge danger">Refunded</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: SELLERS -->
+      <section id="tab-sellers" class="admin-section">
+        <div class="card-header" style="margin-bottom: 1.5rem">
+          <h2 class="section-title" style="margin:0">Manage Sellers</h2>
+          <button class="btn btn-primary">➕ Add Seller</button>
+        </div>
+        <div class="card">
+          <div class="table-filters">
+            <input type="text" placeholder="Search sellers..." class="admin-input"/>
+            <select class="admin-select">
+              <option>All Status</option>
+              <option>Active</option>
+              <option>Suspended</option>
+            </select>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Seller / Shop Name</th>
+                  <th>Email</th>
+                  <th>Category</th>
+                  <th>Products</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="allSellersTable">
+                <!-- Injected by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: PRODUCTS -->
+      <section id="tab-products" class="admin-section">
+        <div class="card-header" style="margin-bottom: 1.5rem">
+          <h2 class="section-title" style="margin:0">All Products</h2>
+        </div>
+        <div class="card">
+          <div class="table-filters">
+            <input type="text" placeholder="Search products..." class="admin-input"/>
+            <select class="admin-select">
+              <option>All Categories</option>
+              <option>Frames</option>
+              <option>Pottery</option>
+              <option>Jewelry</option>
+            </select>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Seller</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsTable">
+                <!-- Injected by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
