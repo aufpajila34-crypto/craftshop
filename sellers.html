@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sell Your Crafts – CraftNest Seller Portal</title>
+  <meta name="description" content="Register as a seller on CraftNest. List your handmade crafts and frames, reach thousands of buyers, and grow your artisan business online."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="sellers-page">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🪡</span>
+        <span>Craft<strong>Nest</strong></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="buyers.html" class="nav-link">Browse Crafts</a></li>
+        <li><a href="sellers.html" class="nav-link active">Sell With Us</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="buyers.html" class="btn btn-outline">Browse</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="page-header seller-header">
+    <div class="page-header-content">
+      <div class="seller-header-badge">🎨 Join 500+ Artisans</div>
+      <h1>Turn Your <span class="highlight">Passion Into Profit</span></h1>
+      <p>Register for free and start selling your handmade crafts, custom frames, and artisan creations to thousands of eager buyers across the country.</p>
+      <div class="seller-perks-row">
+        <div class="seller-perk"><span>✅</span> Free Registration</div>
+        <div class="seller-perk"><span>✅</span> Zero Listing Fees</div>
+        <div class="seller-perk"><span>✅</span> Instant Storefront</div>
+        <div class="seller-perk"><span>✅</span> Secure Payouts</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SELLER PORTAL TABS ===== -->
+  <section class="seller-portal-section" id="seller-portal">
+    <div class="portal-container">
+
+      <!-- Tab Navigation -->
+      <div class="portal-tabs" id="portalTabs">
+        <button class="portal-tab active" id="tab-register" onclick="showPortalTab('register')">
+          <span>📝</span> Register / Login
+        </button>
+        <button class="portal-tab" id="tab-dashboard" onclick="showPortalTab('dashboard')">
+          <span>📊</span> My Dashboard
+        </button>
+        <button class="portal-tab" id="tab-addproduct" onclick="showPortalTab('addproduct')">
+          <span>➕</span> Add Product
+        </button>
+        <button class="portal-tab" id="tab-myproducts" onclick="showPortalTab('myproducts')">
+          <span>🛍️</span> My Products
+        </button>
+      </div>
+
+      <!-- ===== TAB: REGISTER ===== -->
+      <div class="portal-panel active" id="panel-register">
+        <div class="auth-cards">
+
+          <!-- Register Card -->
+          <div class="auth-card" id="registerCard">
+            <div class="auth-card-header">
+              <h2>Create Seller Account</h2>
+              <p>Join CraftNest and start selling your crafts today</p>
+            </div>
+            <form id="registerForm" class="seller-form" onsubmit="handleRegister(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="regFirstName">First Name *</label>
+                  <input type="text" id="regFirstName" placeholder="Enter first name" required/>
+                </div>
+                <div class="form-group">
+                  <label for="regLastName">Last Name *</label>
+                  <input type="text" id="regLastName" placeholder="Enter last name" required/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="regEmail">Email Address *</label>
+                <input type="email" id="regEmail" placeholder="your@email.com" required/>
+              </div>
+              <div class="form-group">
+                <label for="regPhone">Phone Number *</label>
+                <input type="tel" id="regPhone" placeholder="+91 00000 00000" required/>
+              </div>
+              <div class="form-group">
+                <label for="regShopName">Shop / Brand Name *</label>
+                <input type="text" id="regShopName" placeholder="e.g. Artisan's Corner" required/>
+              </div>
+              <div class="form-group">
+                <label for="regCategory">Primary Craft Category *</label>
+                <select id="regCategory" required>
+                  <option value="">-- Select your specialty --</option>
+                  <option value="frames">🖼️ Picture Frames</option>
+                  <option value="pottery">🏺 Pottery & Ceramics</option>
+                  <option value="textiles">🧶 Textiles & Weaving</option>
+                  <option value="jewelry">💍 Jewelry & Accessories</option>
+                  <option value="woodwork">🪵 Woodwork & Carving</option>
+                  <option value="painting">🎨 Paintings & Prints</option>
+                  <option value="candles">🕯️ Candles & Soaps</option>
+                  <option value="resin">💎 Resin Art</option>
+                  <option value="other">🎭 Other Crafts</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="regCity">City / Location *</label>
+                <input type="text" id="regCity" placeholder="e.g. Mumbai, Delhi, Jaipur" required/>
+              </div>
+              <div class="form-group">
+                <label for="regBio">Tell us about your craft *</label>
+                <textarea id="regBio" rows="3" placeholder="Describe your craft, experience, and what makes your work special..." required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="regPassword">Password *</label>
+                <div class="password-wrapper">
+                  <input type="password" id="regPassword" placeholder="Create a strong password" required/>
+                  <button type="button" class="toggle-pwd" onclick="togglePassword('regPassword')">👁️</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="regConfirmPassword">Confirm Password *</label>
+                <div class="password-wrapper">
+                  <input type="password" id="regConfirmPassword" placeholder="Repeat your password" required/>
+                  <button type="button" class="toggle-pwd" onclick="togglePassword('regConfirmPassword')">👁️</button>
+                </div>
+              </div>
+              <div class="form-checkbox">
+                <label>
+                  <input type="checkbox" id="regTerms" required/>
+                  I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full btn-lg" id="registerBtn">
+                🚀 Create My Seller Account
+              </button>
+            </form>
+            <div class="auth-switch">
+              Already have an account? <button onclick="showLoginCard()">Log In →</button>
+            </div>
+          </div>
+
+          <!-- Login Card -->
+          <div class="auth-card hidden" id="loginCard">
+            <div class="auth-card-header">
+              <h2>Welcome Back!</h2>
+              <p>Log in to your CraftNest seller account</p>
+            </div>
+            <form id="loginForm" class="seller-form" onsubmit="handleLogin(event)">
+              <div class="form-group">
+                <label for="loginEmail">Email Address *</label>
+                <input type="email" id="loginEmail" placeholder="your@email.com" required/>
+              </div>
+              <div class="form-group">
+                <label for="loginPassword">Password *</label>
+                <div class="password-wrapper">
+                  <input type="password" id="loginPassword" placeholder="Enter your password" required/>
+                  <button type="button" class="toggle-pwd" onclick="togglePassword('loginPassword')">👁️</button>
+                </div>
+              </div>
+              <div class="form-row form-row-between">
+                <label class="form-checkbox inline">
+                  <input type="checkbox" id="rememberMe"/> Remember me
+                </label>
+                <a href="#" class="forgot-link">Forgot password?</a>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full btn-lg" id="loginBtn">
+                🔐 Log In
+              </button>
+            </form>
+            <div class="auth-switch">
+              New seller? <button onclick="showRegisterCard()">Create Account →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits Panel -->
+        <div class="seller-benefits">
+          <h3>Why Sell on CraftNest?</h3>
+          <div class="benefit-list">
+            <div class="benefit-item">
+              <div class="benefit-icon">🆓</div>
+              <div>
+                <h4>100% Free to Start</h4>
+                <p>No registration fee, no monthly subscription. Pay only when you sell.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">📈</div>
+              <div>
+                <h4>Grow Your Reach</h4>
+                <p>Access thousands of buyers searching for handmade crafts every day.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">🛡️</div>
+              <div>
+                <h4>Secure & Trusted</h4>
+                <p>All payments are encrypted and processed securely with timely payouts.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">📱</div>
+              <div>
+                <h4>Easy to Manage</h4>
+                <p>Simple dashboard to manage your products, orders and messages.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">💬</div>
+              <div>
+                <h4>Seller Support</h4>
+                <p>Dedicated support team to help you at every step of the way.</p>
+              </div>
+            </div>
+          </div>
+          <div class="seller-img-wrap">
+            <img src="C:\Users\DELL\.gemini\antigravity\brain\1cb26cf3-2e77-4fc3-a23b-92411ca76c14\craft_seller_profile_1779303490749.png" alt="Artisan at work" loading="lazy"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== TAB: DASHBOARD ===== -->
+      <div class="portal-panel" id="panel-dashboard">
+        <div class="dashboard-locked" id="dashboardLocked">
+          <div class="locked-icon">🔒</div>
+          <h3>Please log in to view your dashboard</h3>
+          <p>Register or log in to access your seller dashboard</p>
+          <button class="btn btn-primary" onclick="showPortalTab('register')">Register / Login</button>
+        </div>
+        <div class="dashboard-content hidden" id="dashboardContent">
+          <div class="dashboard-header">
+            <div class="dash-welcome">
+              <img src="C:\Users\DELL\.gemini\antigravity\brain\1cb26cf3-2e77-4fc3-a23b-92411ca76c14\craft_seller_profile_1779303490749.png" alt="Seller avatar" class="dash-avatar" loading="lazy"/>
+              <div>
+                <h2>Welcome back, <span id="dashSellerName">Artisan</span>! 👋</h2>
+                <p id="dashShopName">Your Shop Name</p>
+              </div>
+            </div>
+            <button class="btn btn-outline logout-btn" onclick="handleLogout()">Logout</button>
+          </div>
+          <div class="dash-stats">
+            <div class="dash-stat-card">
+              <span class="dash-stat-icon">📦</span>
+              <div class="dash-stat-num" id="dashTotalProducts">0</div>
+              <div class="dash-stat-label">Total Products</div>
+            </div>
+            <div class="dash-stat-card">
+              <span class="dash-stat-icon">🛒</span>
+              <div class="dash-stat-num">12</div>
+              <div class="dash-stat-label">Total Orders</div>
+            </div>
+            <div class="dash-stat-card">
+              <span class="dash-stat-icon">💰</span>
+              <div class="dash-stat-num">₹8,450</div>
+              <div class="dash-stat-label">Total Revenue</div>
+            </div>
+            <div class="dash-stat-card">
+              <span class="dash-stat-icon">⭐</span>
+              <div class="dash-stat-num">4.8</div>
+              <div class="dash-stat-label">Avg. Rating</div>
+            </div>
+          </div>
+          <div class="dash-actions">
+            <button class="dash-action-btn" onclick="showPortalTab('addproduct')">
+              <span>➕</span> Add New Product
+            </button>
+            <button class="dash-action-btn" onclick="showPortalTab('myproducts')">
+              <span>🛍️</span> View My Products
+            </button>
+          </div>
+          <div class="dash-recent">
+            <h3>Recent Orders</h3>
+            <div class="orders-table-wrap">
+              <table class="orders-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th><th>Product</th><th>Buyer</th><th>Amount</th><th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>#1024</td><td>Wooden Photo Frame</td><td>Priya S.</td><td>₹850</td><td><span class="status delivered">Delivered</span></td></tr>
+                  <tr><td>#1023</td><td>Macramé Wall Hanging</td><td>Rohan M.</td><td>₹1,200</td><td><span class="status processing">Processing</span></td></tr>
+                  <tr><td>#1022</td><td>Resin Serving Tray</td><td>Anika K.</td><td>₹1,500</td><td><span class="status pending">Pending</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== TAB: ADD PRODUCT ===== -->
+      <div class="portal-panel" id="panel-addproduct">
+        <div class="dashboard-locked" id="addProductLocked">
+          <div class="locked-icon">🔒</div>
+          <h3>Please log in to add products</h3>
+          <button class="btn btn-primary" onclick="showPortalTab('register')">Register / Login</button>
+        </div>
+        <div class="add-product-content hidden" id="addProductContent">
+          <div class="panel-title">
+            <h2>➕ Add New Product</h2>
+            <p>Fill in the details below to list your craft on CraftNest</p>
+          </div>
+          <form id="addProductForm" class="seller-form product-form" onsubmit="handleAddProduct(event)">
+            <div class="form-section">
+              <h3>📸 Product Images</h3>
+              <div class="image-upload-area" id="imageUploadArea" onclick="document.getElementById('productImages').click()">
+                <input type="file" id="productImages" multiple accept="image/*" style="display:none" onchange="previewImages(event)"/>
+                <div class="upload-placeholder" id="uploadPlaceholder">
+                  <span class="upload-icon">🖼️</span>
+                  <p>Click to upload product images</p>
+                  <span>JPG, PNG, WEBP up to 5MB each (max 5 images)</span>
+                </div>
+                <div class="image-previews" id="imagePreviews"></div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>📋 Basic Information</h3>
+              <div class="form-group">
+                <label for="prodName">Product Name *</label>
+                <input type="text" id="prodName" placeholder="e.g. Rustic Wooden Photo Frame 8x10" required/>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prodCategory">Category *</label>
+                  <select id="prodCategory" required>
+                    <option value="">-- Select Category --</option>
+                    <option value="frames">🖼️ Picture Frames</option>
+                    <option value="pottery">🏺 Pottery & Ceramics</option>
+                    <option value="textiles">🧶 Textiles & Weaving</option>
+                    <option value="jewelry">💍 Jewelry & Accessories</option>
+                    <option value="woodwork">🪵 Woodwork & Carving</option>
+                    <option value="painting">🎨 Paintings & Prints</option>
+                    <option value="candles">🕯️ Candles & Soaps</option>
+                    <option value="resin">💎 Resin Art</option>
+                    <option value="other">🎭 Other Crafts</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="prodSubcategory">Sub-Category</label>
+                  <input type="text" id="prodSubcategory" placeholder="e.g. Wall Frames, Tabletop Frames"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="prodDescription">Product Description *</label>
+                <textarea id="prodDescription" rows="4" placeholder="Describe your product — materials used, dimensions, care instructions, unique features..." required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="prodTags">Tags (comma separated)</label>
+                <input type="text" id="prodTags" placeholder="e.g. handmade, wooden, rustic, vintage, gift"/>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>💰 Pricing & Stock</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prodPrice">Selling Price (₹) *</label>
+                  <input type="number" id="prodPrice" placeholder="0.00" min="1" step="0.01" required/>
+                </div>
+                <div class="form-group">
+                  <label for="prodMRP">MRP / Original Price (₹)</label>
+                  <input type="number" id="prodMRP" placeholder="0.00" min="1" step="0.01"/>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prodStock">Stock Quantity *</label>
+                  <input type="number" id="prodStock" placeholder="e.g. 10" min="0" required/>
+                </div>
+                <div class="form-group">
+                  <label for="prodLeadTime">Lead / Making Time</label>
+                  <select id="prodLeadTime">
+                    <option value="ready">Ready to Ship</option>
+                    <option value="1-3">1-3 Days</option>
+                    <option value="3-7">3-7 Days</option>
+                    <option value="1-2weeks">1-2 Weeks</option>
+                    <option value="custom">Custom (specify in description)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>📐 Product Details</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prodDimensions">Dimensions</label>
+                  <input type="text" id="prodDimensions" placeholder="e.g. 30cm x 20cm x 2cm"/>
+                </div>
+                <div class="form-group">
+                  <label for="prodWeight">Weight</label>
+                  <input type="text" id="prodWeight" placeholder="e.g. 500g"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="prodMaterial">Materials Used *</label>
+                <input type="text" id="prodMaterial" placeholder="e.g. Teak Wood, Brass Nails, Glass" required/>
+              </div>
+              <div class="form-group">
+                <label for="prodColors">Available Colors / Variants</label>
+                <input type="text" id="prodColors" placeholder="e.g. Natural Wood, Dark Walnut, White"/>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>🚚 Shipping</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prodShipping">Shipping Charges (₹)</label>
+                  <input type="number" id="prodShipping" placeholder="0 for free shipping" min="0"/>
+                </div>
+                <div class="form-group">
+                  <label for="prodShipFrom">Ships From</label>
+                  <input type="text" id="prodShipFrom" placeholder="e.g. Jaipur, Rajasthan"/>
+                </div>
+              </div>
+              <div class="form-checkbox">
+                <label>
+                  <input type="checkbox" id="prodCustomOrders"/> I accept custom / personalized orders
+                </label>
+              </div>
+              <div class="form-checkbox">
+                <label>
+                  <input type="checkbox" id="prodGiftWrap"/> Gift wrapping available
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline btn-lg" onclick="saveDraft()">💾 Save as Draft</button>
+              <button type="submit" class="btn btn-primary btn-lg" id="submitProductBtn">
+                🚀 Publish Product
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ===== TAB: MY PRODUCTS ===== -->
+      <div class="portal-panel" id="panel-myproducts">
+        <div class="dashboard-locked" id="myProductsLocked">
+          <div class="locked-icon">🔒</div>
+          <h3>Please log in to view your products</h3>
+          <button class="btn btn-primary" onclick="showPortalTab('register')">Register / Login</button>
+        </div>
+        <div class="my-products-content hidden" id="myProductsContent">
+          <div class="panel-title">
+            <h2>🛍️ My Products</h2>
+            <button class="btn btn-primary" onclick="showPortalTab('addproduct')">+ Add New</button>
+          </div>
+          <div class="my-products-grid" id="myProductsGrid">
+            <!-- Injected by JS -->
+          </div>
+          <div class="no-products-msg hidden" id="noProductsMsg">
+            <span>📦</span>
+            <h3>No products yet</h3>
+            <p>Add your first product to start selling!</p>
+            <button class="btn btn-primary" onclick="showPortalTab('addproduct')">➕ Add First Product</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== HOW TO SELL STEPS ===== -->
+  <section class="how-to-sell" id="how-to-sell">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Getting Started</span>
+        <h2 class="section-title">Start Selling in 3 Easy Steps</h2>
+      </div>
+      <div class="sell-steps">
+        <div class="sell-step">
+          <div class="sell-step-num">01</div>
+          <div class="sell-step-icon">📝</div>
+          <h3>Register for Free</h3>
+          <p>Create your seller account in minutes. No fees, no credit card required.</p>
+        </div>
+        <div class="sell-step-arrow">→</div>
+        <div class="sell-step">
+          <div class="sell-step-num">02</div>
+          <div class="sell-step-icon">📸</div>
+          <h3>List Your Products</h3>
+          <p>Upload photos, write descriptions, set your prices and go live instantly.</p>
+        </div>
+        <div class="sell-step-arrow">→</div>
+        <div class="sell-step">
+          <div class="sell-step-num">03</div>
+          <div class="sell-step-icon">💰</div>
+          <h3>Earn & Grow</h3>
+          <p>Receive orders, ship your crafts, and get paid securely to your bank account.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SUCCESS TOAST ===== -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo footer-logo">
+          <span class="logo-icon">🪡</span>
+          <span>Craft<strong>Nest</strong></span>
+        </a>
+        <p>Empowering artisans to share their craft with the world.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Seller Resources</h4>
+          <ul>
+            <li><a href="#">Seller Guide</a></li>
+            <li><a href="#">Pricing Policy</a></li>
+            <li><a href="#">Shipping Tips</a></li>
+            <li><a href="#">Photography Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 CraftNest. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initSellersPage();
+    });
+  </script>
+</body>
+</html>

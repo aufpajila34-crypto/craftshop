@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CraftNest – Discover Handmade Crafts & Frames</title>
+  <meta name="description" content="CraftNest is your one-stop platform to discover and buy handmade crafts, picture frames, and artisan works directly from skilled makers."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🪡</span>
+        <span>Craft<strong>Nest</strong></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="buyers.html" class="nav-link">Browse Crafts</a></li>
+        <li><a href="sellers.html" class="nav-link">Sell With Us</a></li>
+        <li><a href="#categories" class="nav-link">Categories</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="buyers.html" class="btn btn-outline">Browse</a>
+        <a href="sellers.html" class="btn btn-primary">Start Selling</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🎨 Handmade with Love</div>
+      <h1 class="hero-title">
+        Find <span class="highlight">Unique Crafts</span><br/>
+        & <span class="highlight">Custom Frames</span><br/>
+        All in One Place
+      </h1>
+      <p class="hero-desc">
+        Connect with talented craft makers and frame artists. Discover one-of-a-kind handmade pieces, support local artisans, and find the perfect work of art for your space.
+      </p>
+      <div class="hero-actions">
+        <a href="buyers.html" class="btn btn-primary btn-lg" id="hero-browse-btn">
+          <span>🛍️</span> Explore Crafts
+        </a>
+        <a href="sellers.html" class="btn btn-glass btn-lg" id="hero-sell-btn">
+          <span>✨</span> Become a Seller
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Artisans</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3200">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Products</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="12000">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Happy Buyers</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-image-card main-card">
+        <img src="C:\Users\DELL\.gemini\antigravity\brain\1cb26cf3-2e77-4fc3-a23b-92411ca76c14\craft_hero_banner_1779303435265.png" alt="Handmade crafts and frames collection" loading="lazy"/>
+        <div class="card-badge">✅ Handcrafted</div>
+      </div>
+      <div class="hero-image-card side-card-1">
+        <img src="C:\Users\DELL\.gemini\antigravity\brain\1cb26cf3-2e77-4fc3-a23b-92411ca76c14\frames_collection_1779303453765.png" alt="Artisan frames" loading="lazy"/>
+      </div>
+      <div class="hero-image-card side-card-2">
+        <img src="C:\Users\DELL\.gemini\antigravity\brain\1cb26cf3-2e77-4fc3-a23b-92411ca76c14\pottery_craft_1779303545406.png" alt="Pottery crafts" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="trust-bar">
+    <div class="trust-container">
+      <div class="trust-item"><span>🔒</span> Secure Payments</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><span>🌟</span> Verified Artisans</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><span>🚚</span> Nationwide Delivery</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><span>🔄</span> Easy Returns</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><span>💬</span> 24/7 Support</div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="categories-section" id="categories">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Explore</span>
+        <h2 class="section-title">Browse by Category</h2>
+        <p class="section-desc">From delicate jewelry to grand wall art — find exactly what you're looking for</p>
+      </div>
+      <div class="categories-grid">
+        <a href="buyers.html?cat=frames" class="cat-card" id="cat-frames">
+          <div class="cat-icon">🖼️</div>
+          <h3>Picture Frames</h3>
+          <p>Handcrafted wooden, metal & resin frames</p>
+          <span class="cat-count">240+ items</span>
+        </a>
+        <a href="buyers.html?cat=pottery" class="cat-card" id="cat-pottery">
+          <div class="cat-icon">🏺</div>
+          <h3>Pottery & Ceramics</h3>
+          <p>Bowls, vases, mugs & decorative pieces</p>
+          <span class="cat-count">185+ items</span>
+        </a>
+        <a href="buyers.html?cat=textiles" class="cat-card" id="cat-textiles">
+          <div class="cat-icon">🧶</div>
+          <h3>Textiles & Weaving</h3>
+          <p>Macramé, tapestries, rugs & wall hangings</p>
+          <span class="cat-count">320+ items</span>
+        </a>
+        <a href="buyers.html?cat=jewelry" class="cat-card" id="cat-jewelry">
+          <div class="cat-icon">💍</div>
+          <h3>Jewelry & Accessories</h3>
+          <p>Handmade rings, necklaces & bracelets</p>
+          <span class="cat-count">410+ items</span>
+        </a>
+        <a href="buyers.html?cat=woodwork" class="cat-card" id="cat-woodwork">
+          <div class="cat-icon">🪵</div>
+          <h3>Woodwork & Carving</h3>
+          <p>Sculptures, furniture & home décor</p>
+          <span class="cat-count">150+ items</span>
+        </a>
+        <a href="buyers.html?cat=painting" class="cat-card" id="cat-painting">
+          <div class="cat-icon">🎨</div>
+          <h3>Paintings & Prints</h3>
+          <p>Original artworks & limited prints</p>
+          <span class="cat-count">290+ items</span>
+        </a>
+        <a href="buyers.html?cat=candles" class="cat-card" id="cat-candles">
+          <div class="cat-icon">🕯️</div>
+          <h3>Candles & Soaps</h3>
+          <p>Handpoured soy candles & artisan soaps</p>
+          <span class="cat-count">180+ items</span>
+        </a>
+        <a href="buyers.html?cat=resin" class="cat-card" id="cat-resin">
+          <div class="cat-icon">💎</div>
+          <h3>Resin Art</h3>
+          <p>Trays, coasters, clocks & custom pieces</p>
+          <span class="cat-count">220+ items</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCTS ===== -->
+  <section class="featured-section" id="featured">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Trending</span>
+        <h2 class="section-title">Featured Creations</h2>
+        <p class="section-desc">Hand-picked masterpieces from our top artisans this week</p>
+      </div>
+      <div class="products-grid" id="featuredGrid">
+        <!-- Products injected by JS -->
+      </div>
+      <div class="section-cta">
+        <a href="buyers.html" class="btn btn-primary btn-lg">View All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-section" id="how">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Simple Steps</span>
+        <h2 class="section-title">How CraftNest Works</h2>
+      </div>
+      <div class="how-tabs">
+        <button class="how-tab active" id="tab-buyer" onclick="switchTab('buyer')">👛 For Buyers</button>
+        <button class="how-tab" id="tab-seller" onclick="switchTab('seller')">🏪 For Sellers</button>
+      </div>
+      <div class="how-steps" id="stepsContent">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOP SELLERS ===== -->
+  <section class="sellers-section" id="top-sellers">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Our Community</span>
+        <h2 class="section-title">Meet Top Artisans</h2>
+        <p class="section-desc">Real people creating real magic — one craft at a time</p>
+      </div>
+      <div class="sellers-grid" id="sellersGrid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-visual">
+        <img src="C:\Users\DELL\.gemini\antigravity\brain\1cb26cf3-2e77-4fc3-a23b-92411ca76c14\craft_seller_profile_1779303490749.png" alt="Artisan at work" loading="lazy"/>
+        <div class="about-badge">
+          <span class="about-badge-icon">🏆</span>
+          <div>
+            <strong>Best Platform</strong>
+            <span>Artisan Choice 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">Connecting Makers<br/>With the World</h2>
+        <p>CraftNest was born from a simple belief — every handmade creation deserves to be found. We built this platform to bridge the gap between talented local artisans and people who appreciate the beauty of handcrafted work.</p>
+        <p>Whether you're a frame maker, a pottery artist, a jewelry designer, or any kind of craft creator — CraftNest gives you a professional storefront to showcase and sell your creations to thousands of eager buyers.</p>
+        <div class="about-features">
+          <div class="about-feature"><span>✅</span> Free seller registration</div>
+          <div class="about-feature"><span>✅</span> Zero listing fees</div>
+          <div class="about-feature"><span>✅</span> Secure payment processing</div>
+          <div class="about-feature"><span>✅</span> Dedicated seller dashboard</div>
+        </div>
+        <a href="sellers.html" class="btn btn-primary btn-lg">Join as an Artisan →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2>Ready to Share Your Craft with the World?</h2>
+      <p>Join 500+ artisans already selling on CraftNest. Registration is free, fast, and simple.</p>
+      <div class="cta-buttons">
+        <a href="sellers.html" class="btn btn-white btn-lg" id="cta-seller-btn">🎨 Register as a Seller</a>
+        <a href="buyers.html" class="btn btn-outline-white btn-lg" id="cta-buyer-btn">🛍️ Start Shopping</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo footer-logo">
+          <span class="logo-icon">🪡</span>
+          <span>Craft<strong>Nest</strong></span>
+        </a>
+        <p>Your one-stop destination for handmade crafts and custom frames. Supporting artisans, one sale at a time.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">👥</a>
+          <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" aria-label="Pinterest">📌</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Marketplace</h4>
+          <ul>
+            <li><a href="buyers.html">Browse All Crafts</a></li>
+            <li><a href="buyers.html?cat=frames">Picture Frames</a></li>
+            <li><a href="buyers.html?cat=pottery">Pottery</a></li>
+            <li><a href="buyers.html?cat=jewelry">Jewelry</a></li>
+            <li><a href="buyers.html?cat=textiles">Textiles</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>For Sellers</h4>
+          <ul>
+            <li><a href="sellers.html">Seller Registration</a></li>
+            <li><a href="sellers.html#add-product">Add Product</a></li>
+            <li><a href="sellers.html#dashboard">My Dashboard</a></li>
+            <li><a href="#">Seller Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 CraftNest. All rights reserved. Made with ❤️ for artisans everywhere.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
